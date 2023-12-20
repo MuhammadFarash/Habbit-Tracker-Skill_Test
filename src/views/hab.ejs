@@ -1,0 +1,106 @@
+<style>
+  ul{
+    padding-top: 4rem;
+  }
+
+  body{
+        background-image: url("https://c4.wallpaperflare.com/wallpaper/625/542/502/high-quality-backgrounds-nature-1920x1200-wallpaper-preview.jpg");
+        /* background-color: rgb(3, 3, 68); */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    h1{
+      color: antiquewhite;
+      padding: 2rem;
+    }
+
+  
+</style>
+<div class="text-center fs-1">
+  <h1>Habit Tracker</h1>
+</div>
+    
+
+ <!-- <div class="hstack gap-3">
+<div class="text-center border border-primary d-inline-flex p-2" style="padding: 1rem;" >
+  <form action="/add-habit" method="post">
+  <label for="habitName">New Habit:</label>
+  <input type="text" id="habitName" name="habitName" required>
+  <div><button type="submit">Add Habit</button></div>
+</form></div> -->
+  <!-- Add new habit form
+  
+
+  <!-- <div class="border border-primary d-inline-flex p-2" >
+    <ul>
+      <% habits.forEach(habit => { %>
+        <li style="padding: 1rem;">
+          <%= habit.name %> - <%= habit.status %>
+          <form action="/update-status/<%= habit._id %>" method="post">
+            <select name="status">
+              <option value="Done">Done</option>
+              <option value="Not done">Not done</option>
+              <option value="None">None</option>
+            </select>
+            <button type="submit">Update Status</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</div>  -->
+  <!-- Display habits -->
+  <div class="row hstack gap-3">
+    <!-- <div class="col-sm-6 mb-3 mb-sm-0" > -->
+      <div class="card">
+        <div class="card-body mb-3">
+          <!-- <h5 class="card-title">New Habit</h5>
+          <input type="text" id="habitName" name="habitName" required>
+          <div><button type="submit">Add Habit</button></div> -->
+          <form action="/add-habit" method="post">
+            <div class="mb-3"><h5><label for="habitName">New Habit:</label></h5>
+              <input type="text" id="habitName" name="habitName" required>
+              <div class="mb-3"><button type="submit" class="btn btn-primary mt-3 ">Add Habit</button></div>
+              
+            </div>
+            
+        </div>
+      </div>
+    <!-- </div> -->
+    <!-- <div class="col-sm-6 gap-3"> -->
+      <div class="card">
+        <div class="card-body gap-3 padding-top">
+          <!-- <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a> -->
+          <ul>
+            <% habits.forEach(habit => { %>
+              <div class="card mb-3">
+                <h5 class="card-header">Habit : <%= habit.name %> </h5>
+                <div class="card-body padding-top">
+                  <h5 class="card-title"><%= habit.status %></h5>
+                  <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                  <form action="/update-status/<%= habit._id %>" method="post">
+                    <select name="status">
+                      <option value="Done">Done</option>
+                      <option value="Not done">Not done</option>
+                      <option value="None">None</option>
+                    </select>
+                    <button type="submit">Update Status</button>
+                  </form>
+                  <!-- <a href="/<%= habit._id %>" class=' btn' id="button">
+                    <i class="bi bi-archive-fill icon" style="color: black;">Delete</i>
+            </a> -->
+                </div>
+              </div>
+            <% }) %>
+          </ul>
+        </div>
+      </div>
+    <!-- </div> -->
+  </div>
+
+  
+  
